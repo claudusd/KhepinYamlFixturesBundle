@@ -2,7 +2,6 @@
 
 namespace Khepin\YamlFixturesBundle\Fixture;
 
-use Doctrine\Common\Util\Inflector;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 
 class OrmYamlFixture extends AbstractFixture
@@ -57,7 +56,7 @@ class OrmYamlFixture extends AbstractFixture
                     $accessor->setValue($object, $field, $this->loader->getReference($value)); 
                 }
             } else {
-                $accessor->setValue($object, $field, $this->loader->getReference($value));
+                $accessor->setValue($object, $field, $value);
             }
         }
         $this->runServiceCalls($object);
