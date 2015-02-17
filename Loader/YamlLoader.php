@@ -82,6 +82,16 @@ class YamlLoader
     }
 
     /**
+     * To know if a reference exist
+     * @param string $referance_name
+     * @return bool
+     */
+    public function hasReference($reference_name)
+    {
+        return isset($this->references[$reference_name]);
+    }
+
+    /**
      * Gets all fixtures files
      */
     protected function loadFixtureFiles()

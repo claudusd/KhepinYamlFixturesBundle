@@ -56,6 +56,9 @@ class OrmYamlFixture extends AbstractFixture
                     $accessor->setValue($object, $field, $this->loader->getReference($value)); 
                 }
             } else {
+                if ($this->loader->hasReference($value)) {
+                    $value = $this->loader->getReference($value);
+                }
                 $accessor->setValue($object, $field, $value);
             }
         }
