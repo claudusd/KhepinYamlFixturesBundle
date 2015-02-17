@@ -88,6 +88,8 @@ class YamlLoader
      */
     public function hasReference($reference_name)
     {
+        var_dump($referance_name);
+        var_dump(get_class($this->references[$reference_name]));
         return isset($this->references[$reference_name]);
     }
 
